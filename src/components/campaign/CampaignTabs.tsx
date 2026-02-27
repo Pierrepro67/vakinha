@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import type { Campaign, Update } from '@/lib/data';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { Award, Clipboard, HandCoins, Heart, HeartHandshake, Star, Trophy, Zap } from 'lucide-react';
+import { Award, Clipboard, FileHeart, HandCoins, Heart, HeartHandshake, Star, Trophy, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import React from 'react';
 import Link from 'next/link';
@@ -229,7 +229,28 @@ export function CampaignTabs({
       <TabsContent value="badges">
         <Card>
           <CardContent className="p-6">
-            <p className="text-muted-foreground text-center">Nenhum selo recebido ainda.</p>
+            <div className="flex flex-col sm:flex-row justify-around items-center gap-8 py-4">
+              <div className="flex flex-col items-center gap-3 text-center">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#1D7744]">
+                  <Trophy className="h-10 w-10 text-white" />
+                </div>
+                <p className="font-semibold text-foreground">Recebeu 5.000 corações</p>
+              </div>
+
+              <div className="flex flex-col items-center gap-3 text-center">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#F2780C]">
+                  <Award className="h-10 w-10 text-white" />
+                </div>
+                <p className="font-semibold text-foreground">Recebeu 10.000 corações</p>
+              </div>
+
+              <div className="flex flex-col items-center gap-3 text-center">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#E84A4A]">
+                  <FileHeart className="h-10 w-10 text-white" />
+                </div>
+                <p className="max-w-32 font-semibold text-foreground">Mais amada das últimas 24h</p>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </TabsContent>
