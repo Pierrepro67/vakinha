@@ -1,3 +1,52 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "campaign-main",
+      "description": "Main campaign image showing people helping each other.",
+      "imageUrl": "https://images.unsplash.com/photo-1763844669613-563f1ef49ac9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb21tdW5pdHklMjBoZWxwfGVufDB8fHx8MTc3MjE2MDQ4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community help"
+    },
+    {
+      "id": "related-campaign-1",
+      "description": "A child smiling, for a related campaign.",
+      "imageUrl": "https://images.unsplash.com/photo-1531325082793-ca7c9db6a4c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGFwcHklMjBjaGlsZHxlbnwwfHx8fDE3NzIxNDQ0Njd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy child"
+    },
+    {
+      "id": "related-campaign-2",
+      "description": "Volunteers planting trees.",
+      "imageUrl": "https://images.unsplash.com/photo-1589923188900-85dae523342b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwbGFudGluZyUyMHRyZWVzfGVufDB8fHx8MTc3MjE2MDQ4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "planting trees"
+    },
+    {
+      "id": "related-campaign-3",
+      "description": "Animal shelter with dogs and cats.",
+      "imageUrl": "https://images.unsplash.com/photo-1560743641-3914f2c45636?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YW5pbWFsJTIwc2hlbHRlcnxlbnwwfHx8fDE3NzIxNjA0ODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "animal shelter"
+    },
+    {
+      "id": "related-campaign-4",
+      "description": "Building a new community school.",
+      "imageUrl": "https://images.unsplash.com/photo-1664553692783-888fda781031?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxidWlsZGluZyUyMHNjaG9vbHxlbnwwfHx8fDE3NzIxNjA0ODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "building school"
+    },
+    {
+      "id": "supporter-avatar-1",
+      "description": "Avatar for a supporter.",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzIxMDU3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "supporter-avatar-2",
+      "description": "Avatar for another supporter.",
+      "imageUrl": "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzIxMDU3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "supporter-avatar-3",
+      "description": "Avatar for a third supporter.",
+      "imageUrl": "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBmYWNlfGVufDB8fHx8MTc3MjE1Mjg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person face"
+    }
+  ]
 }
