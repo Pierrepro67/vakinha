@@ -15,8 +15,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
 function formatCurrency(value: number) {
   return new Intl.NumberFormat('pt-BR', {
@@ -26,16 +24,21 @@ function formatCurrency(value: number) {
 }
 
 const donationOptions = [10, 25, 50, 100];
+const donationLinks: { [key: number]: string } = {
+  10: 'https://compraonlinesegurada.org.ua/c/85ec6f5194',
+  25: 'https://compraonlinesegurada.org.ua/c/9cfec03cdf',
+  50: 'https://compraonlinesegurada.org.ua/c/4be2b74240',
+  100: 'https://compraonlinesegurada.org.ua/c/dcde15e559',
+};
 
 export function FundraisingCard({ campaign }: { campaign: Campaign }) {
   const [selectedAmount, setSelectedAmount] = useState<number>(25);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleDonation = () => {
-    if (selectedAmount && selectedAmount > 0) {
-      console.log(`Doando ${formatCurrency(selectedAmount)}`);
-      // Here would be the logic to process the donation
-      setIsDialogOpen(false); // Close dialog on donation
+    const link = donationLinks[selectedAmount];
+    if (link) {
+      window.location.href = link;
     }
   }
 
