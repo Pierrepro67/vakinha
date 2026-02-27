@@ -77,21 +77,6 @@ export function CampaignTabs({
       <Separator className="mb-6"/>
       <TabsContent value="about" className="mt-0">
         <div className="space-y-6 text-sm md:text-base">
-          <div className="bg-muted/50 p-4 rounded-lg flex justify-between items-center text-muted-foreground">
-            <p>
-              Você pode ajudar via Pix usando a chave:{' '}
-              <span className="font-semibold text-foreground break-all">5971177@vakinha.com.br</span>
-            </p>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 flex-shrink-0"
-              onClick={() => copyToClipboard('5971177@vakinha.com.br')}
-            >
-              <Clipboard className="h-5 w-5" />
-            </Button>
-          </div>
-          <Separator />
           <div className="space-y-4">
             <p className="text-muted-foreground">Vaquinha criada em: 26/02/2026</p>
             <p className="whitespace-pre-wrap text-foreground leading-relaxed">{campaign.description}</p>
