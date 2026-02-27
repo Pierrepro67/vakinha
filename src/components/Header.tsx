@@ -4,13 +4,21 @@ import { ChevronDown, Search } from 'lucide-react';
 import Image from 'next/image';
 
 const VakinhaLogo = () => (
-    <Image
-        src="https://scontent.fcpq17-1.fna.fbcdn.net/v/t39.30808-6/642413935_122111462721224584_56991097251531606_n.jpg?stp=cp0_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=Sn8CJ0QUYowQ7kNvwE0orc8&_nc_oc=AdnCJ8QtnMI3UrgDwrnrE0PlyYM7NMeHccdU5hJHuINJboUcwvuvWzoVJFVY78rg_bUpmS4Di0MqXso1cInlJT4U&_nc_zt=23&_nc_ht=scontent.fcpq17-1.fna&_nc_gid=KKGO7rD7LumddEVZMYt8rQ&oh=00_AfuYskEm6MHgIMHkXemuAeUuzbH5FanqPyw7dOIjAZHMjQ&oe=69A6E526"
-        alt="Vakinha Logo"
-        width={32}
-        height={32}
-        className="rounded-full"
-    />
+    <svg
+        width="32"
+        height="32"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-primary"
+    >
+        <path d="M42 4H6C4.89543 4 4 4.89543 4 6V34C4 35.1046 4.89543 36 6 36H14V44L24.6667 36H42C43.1046 36 44 35.1046 44 34V6C44 4.89543 43.1046 4 42 4Z" fill="currentColor"/>
+        <line x1="24" y1="16" x2="16" y2="26" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="24" y1="16" x2="32" y2="26" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+        <circle cx="24" cy="16" r="4" fill="white" />
+        <circle cx="16" cy="26" r="4" fill="white" />
+        <circle cx="32" cy="26" r="4" fill="white" />
+    </svg>
 )
 
 export default function Header() {
