@@ -2,13 +2,14 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import type { Campaign, Update, Supporter } from '@/lib/data';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import type { Campaign, Update } from '@/lib/data';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { Clipboard } from 'lucide-react';
+import { Award, Clipboard, HandCoins, Heart, HeartHandshake } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import React from 'react';
+import Link from 'next/link';
 
 function formatCurrency(value: number) {
   return new Intl.NumberFormat('pt-BR', {
@@ -20,11 +21,9 @@ function formatCurrency(value: number) {
 export function CampaignTabs({
   campaign,
   updates,
-  supporters,
 }: {
   campaign: Pick<Campaign, 'description'>;
   updates: Update[];
-  supporters: Supporter[];
 }) {
   const { toast } = useToast();
 
@@ -123,28 +122,51 @@ export function CampaignTabs({
       </TabsContent>
       <TabsContent value="supporters">
         <Card>
-          <CardContent className="p-6 space-y-4">
-            {supporters.length > 0 ? (
-              supporters.map((supporter, index) => (
-                <div key={index} className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Avatar>
-                      {supporter.avatar && <AvatarImage src={supporter.avatar.imageUrl} alt={supporter.name} />}
-                      <AvatarFallback>
-                        {supporter.name === 'Doador Anônimo' ? 'A' : supporter.name.charAt(0)}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <p className="font-semibold">{supporter.name}</p>
-                      <p className="text-sm text-muted-foreground">{supporter.time}</p>
-                    </div>
-                  </div>
-                  <p className="font-semibold">{formatCurrency(supporter.amount)}</p>
-                </div>
-              ))
-            ) : (
-              <p className="text-muted-foreground text-center">Seja o primeiro a apoiar!</p>
-            )}
+          <CardContent className="p-6 space-y-8">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-full bg-[#2ECC71]">
+                <HandCoins className="h-5 w-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-base text-foreground">Contribuições</h4>
+                <p className="text-sm text-muted-foreground">20812 pessoas doaram</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-full bg-[#2ECC71]">
+                <HeartHandshake className="h-5 w-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-base text-foreground">Adotantes</h4>
+                <p className="text-sm text-muted-foreground">
+                  Quer adotar essa vaquinha?{' '}
+                  <Link href="#" className="font-semibold text-primary hover:underline">
+                    Clique aqui!
+                  </Link>
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+               <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-full bg-[#3498DB]">
+                 <Award className="h-5 w-5 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-base text-foreground">Promotores do Bem</h4>
+                <p className="text-sm text-muted-foreground">Compartilhe a vaquinha, traga doações e se torne Promotor do Bem</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-full bg-[#E74C3C]">
+                 <Heart className="h-5 w-5 text-white" fill="white" />
+              </div>
+               <div>
+                <h4 className="font-semibold text-base text-foreground">Corações</h4>
+                <p className="text-sm text-muted-foreground">Esta vaquinha recebeu 14773 corações no total e já esteve na lista de mais amadas da semana 1 vez</p>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </TabsContent>

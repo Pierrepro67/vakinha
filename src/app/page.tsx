@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { campaignData, updatesData, supportersData } from '@/lib/data';
+import { campaignData, updatesData } from '@/lib/data';
 import Header from '@/components/Header';
 import { Card } from '@/components/ui/card';
 import { FundraisingCard } from '@/components/campaign/FundraisingCard';
@@ -32,7 +32,7 @@ export default function Home() {
 
               <div className="space-y-4">
                 <CampaignInfo campaign={campaignData} />
-                <CampaignTabs campaign={campaignData} updates={updatesData} supporters={supportersData} />
+                <CampaignTabs campaign={campaignData} updates={updatesData} />
               </div>
             </div>
 
