@@ -21,26 +21,26 @@ export default function Header() {
                 <span className="text-primary">vakinha</span>
             </Link>
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-                <span className="flex items-center gap-1 text-muted-foreground cursor-not-allowed opacity-50">
+                <span className="flex items-center gap-1 text-muted-foreground">
                     Como ajudar <ChevronDown className="h-4 w-4" />
                 </span>
-                <span className="flex items-center gap-1 text-muted-foreground cursor-not-allowed opacity-50">
+                <span className="flex items-center gap-1 text-muted-foreground">
                     Descubra <ChevronDown className="h-4 w-4" />
                 </span>
-                <span className="flex items-center gap-1 text-muted-foreground cursor-not-allowed opacity-50">
+                <span className="flex items-center gap-1 text-muted-foreground">
                     Como funciona <ChevronDown className="h-4 w-4" />
                 </span>
             </nav>
         </div>
         <div className="hidden md:flex items-center gap-4">
-            <span className="flex items-center gap-2 text-sm font-medium text-primary cursor-not-allowed opacity-50">
+            <span className="flex items-center gap-2 text-sm font-medium text-primary">
                 <Search className="h-4 w-4" />
                 Buscar
             </span>
-            <span className="text-sm font-medium text-muted-foreground cursor-not-allowed opacity-50">
+            <span className="text-sm font-medium text-muted-foreground">
                 Minha conta
             </span>
-            <span className="cursor-not-allowed text-sm font-semibold text-primary-foreground bg-primary px-4 py-2 rounded-md opacity-50">
+            <span className="text-sm font-semibold text-primary-foreground bg-primary px-4 py-2 rounded-md">
               Faz uma vaquinha!
             </span>
         </div>
