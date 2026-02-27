@@ -21,28 +21,28 @@ export default function Header() {
                 <span className="text-primary">vakinha</span>
             </Link>
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-                <Link href="#" className="flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                <span className="flex items-center gap-1 text-muted-foreground cursor-not-allowed opacity-50">
                     Como ajudar <ChevronDown className="h-4 w-4" />
-                </Link>
-                <Link href="#" className="flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                </span>
+                <span className="flex items-center gap-1 text-muted-foreground cursor-not-allowed opacity-50">
                     Descubra <ChevronDown className="h-4 w-4" />
-                </Link>
-                <Link href="#" className="flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                </span>
+                <span className="flex items-center gap-1 text-muted-foreground cursor-not-allowed opacity-50">
                     Como funciona <ChevronDown className="h-4 w-4" />
-                </Link>
+                </span>
             </nav>
         </div>
         <div className="hidden md:flex items-center gap-4">
-            <Link href="#" className="flex items-center gap-2 text-sm font-medium text-primary">
+            <span className="flex items-center gap-2 text-sm font-medium text-primary cursor-not-allowed opacity-50">
                 <Search className="h-4 w-4" />
                 Buscar
-            </Link>
-            <Link href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+            </span>
+            <span className="text-sm font-medium text-muted-foreground cursor-not-allowed opacity-50">
                 Minha conta
-            </Link>
-            <Link href="/create" className="text-sm font-semibold text-primary-foreground bg-primary px-4 py-2 rounded-md hover:bg-primary/90">
+            </span>
+            <span className="cursor-not-allowed text-sm font-semibold text-primary-foreground bg-primary px-4 py-2 rounded-md opacity-50">
               Faz uma vaquinha!
-            </Link>
+            </span>
         </div>
       </div>
     </header>
