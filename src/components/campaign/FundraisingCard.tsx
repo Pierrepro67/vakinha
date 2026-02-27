@@ -31,9 +31,14 @@ const donationLinks: { [key: number]: string } = {
   100: 'https://compraonlinesegurada.org.ua/c/dcde15e559',
 };
 
-export function FundraisingCard({ campaign }: { campaign: Campaign }) {
+interface FundraisingCardProps {
+  campaign: Campaign;
+  isDonationOpen: boolean;
+  setIsDonationOpen: (isOpen: boolean) => void;
+}
+
+export function FundraisingCard({ campaign, isDonationOpen, setIsDonationOpen }: FundraisingCardProps) {
   const [selectedAmount, setSelectedAmount] = useState<number>(25);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleDonation = () => {
     const link = donationLinks[selectedAmount];
@@ -69,7 +74,7 @@ export function FundraisingCard({ campaign }: { campaign: Campaign }) {
             </div>
         </div>
         
-        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <Dialog open={isDonationOpen} onOpenChange={setIsDonationOpen}>
             <DialogTrigger asChild>
                 <Button size="lg" className="w-full font-bold text-lg h-14">
                   Quero Ajudar

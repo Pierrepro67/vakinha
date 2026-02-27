@@ -11,7 +11,7 @@ const VakinhaLogo = () => (
     />
 )
 
-export default function Header() {
+export default function Header({ onDonateClick }: { onDonateClick?: () => void }) {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card">
       <div className="container flex h-20 max-w-screen-2xl items-center justify-between">
@@ -40,9 +40,13 @@ export default function Header() {
             <span className="text-sm font-medium text-muted-foreground">
                 Minha conta
             </span>
-            <span className="text-sm font-semibold text-primary-foreground bg-primary px-4 py-2 rounded-md">
+            <button 
+              onClick={onDonateClick}
+              disabled={!onDonateClick}
+              className="text-sm font-semibold text-primary-foreground bg-primary px-4 py-2 rounded-md cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            >
               Fazer uma doação
-            </span>
+            </button>
         </div>
       </div>
     </header>

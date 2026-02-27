@@ -11,10 +11,11 @@ import { useState } from 'react';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('about');
+  const [isDonationOpen, setIsDonationOpen] = useState(false);
 
   return (
     <div className="flex min-h-screen w-full flex-col">
-      <Header />
+      <Header onDonateClick={() => setIsDonationOpen(true)} />
       <main className="flex-1 py-8">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
@@ -48,7 +49,11 @@ export default function Home() {
 
             {/* Right Column */}
             <div className="lg:col-span-1">
-              <FundraisingCard campaign={campaignData} />
+              <FundraisingCard 
+                campaign={campaignData} 
+                isDonationOpen={isDonationOpen}
+                setIsDonationOpen={setIsDonationOpen}
+              />
             </div>
           </div>
         </div>
