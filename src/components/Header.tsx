@@ -41,7 +41,7 @@ export default function Header() {
                 Minha conta
             </span>
             <span className="text-sm font-semibold text-primary-foreground bg-primary px-4 py-2 rounded-md">
-              Faz uma vaquinha!
+              Fazer uma doação
             </span>
         </div>
       </div>
