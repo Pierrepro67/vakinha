@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Search } from 'lucide-react';
+import Image from 'next/image';
 
 const VakinhaLogo = () => (
-    <svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary">
-        <path d="M160 208H240C240 158.504 209.752 115.152 166.448 93.552L128 72L89.552 93.552C46.248 115.152 16 158.504 16 208H96" stroke="currentColor" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M104 48L128 72L152 48" stroke="currentColor" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <Image
+        src="https://scontent.fcpq17-1.fna.fbcdn.net/v/t39.30808-6/642413935_122111462721224584_56991097251531606_n.jpg?stp=cp0_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=Sn8CJ0QUYowQ7kNvwE0orc8&_nc_oc=AdnCJ8QtnMI3UrgDwrnrE0PlyYM7NMeHccdU5hJHuINJboUcwvuvWzoVJFVY78rg_bUpmS4Di0MqXso1cInlJT4U&_nc_zt=23&_nc_ht=scontent.fcpq17-1.fna&_nc_gid=KKGO7rD7LumddEVZMYt8rQ&oh=00_AfuYskEm6MHgIMHkXemuAeUuzbH5FanqPyw7dOIjAZHMjQ&oe=69A6E526"
+        alt="Vakinha Logo"
+        width={32}
+        height={32}
+        className="rounded-full"
+    />
 )
 
 export default function Header() {
@@ -16,7 +20,7 @@ export default function Header() {
         <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2 font-bold text-2xl">
                 <VakinhaLogo />
-                <span className="text-foreground">vakinha</span>
+                <span className="text-primary">vakinha</span>
             </Link>
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
                 <Link href="#" className="flex items-center gap-1 text-muted-foreground hover:text-foreground">
