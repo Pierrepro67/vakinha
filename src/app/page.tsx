@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <main className="flex-1 py-8">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
             
             {/* Left Column */}
             <div className="lg:col-span-2">
@@ -48,7 +48,7 @@ export default function Home() {
             </div>
 
             {/* Right Column */}
-            <div className="lg:col-span-1 mt-8 lg:mt-0">
+            <div className="lg:col-span-1">
               <FundraisingCard campaign={campaignData} />
             </div>
           </div>
