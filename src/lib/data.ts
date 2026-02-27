@@ -20,10 +20,10 @@ export const campaignData = {
   title: 'AJUDA HUMANITÁRIA | ZONA DA MATA - MG',
   id: '5971177',
   description: 'As fortes chuvas que atingiram a Zona da Mata mineira deixaram milhares de famílias em situação de emergência. Os dados atuais contam cerca de 3.500 famílias desalojadas, 49 mortos e várias cidades em situação de calamidade pública. Precisamos da sua ajuda para levar alimentos, água potável, roupas e kits de higiene para quem mais precisa. Sua doação é um gesto de esperança.',
-  raised: 1328071.71,
+  raised: 1335622.63,
   goal: 1500000,
-  supportersCount: 19646,
-  heartsReceived: 13774,
+  supportersCount: 19917,
+  heartsReceived: 13981,
   daysLeft: 15,
   mainImage: getImage('campaign-main'),
   organizer: {
