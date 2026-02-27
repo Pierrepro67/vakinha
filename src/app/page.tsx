@@ -3,8 +3,8 @@ import { campaignData, updatesData, supportersData } from '@/lib/data';
 import Header from '@/components/Header';
 import { Card } from '@/components/ui/card';
 import { FundraisingCard } from '@/components/campaign/FundraisingCard';
-import { Heart } from 'lucide-react';
 import { CampaignTabs } from '@/components/campaign/CampaignTabs';
+import { CampaignInfo } from '@/components/campaign/CampaignInfo';
 
 export default function Home() {
   return (
@@ -28,16 +28,10 @@ export default function Home() {
                     sizes="(max-width: 1024px) 100vw, 67vw"
                   />
                 </div>
-                <button className="absolute top-4 right-4 bg-card/80 backdrop-blur-sm rounded-full p-2.5 hover:bg-card transition-colors">
-                    <Heart className="h-6 w-6 text-foreground" />
-                </button>
               </Card>
 
               <div className="space-y-4">
-                <p className="text-sm font-semibold text-muted-foreground tracking-wider">{campaignData.category}</p>
-                <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-                  {campaignData.title}
-                </h1>
+                <CampaignInfo campaign={campaignData} />
                 <CampaignTabs campaign={campaignData} updates={updatesData} supporters={supportersData} />
               </div>
             </div>
