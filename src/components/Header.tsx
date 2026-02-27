@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { ChevronDown, Search } from 'lucide-react';
 import Image from 'next/image';
 
@@ -52,9 +51,14 @@ export default function Header() {
             <Link href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground">
                 Minha conta
             </Link>
-            <Button>
-                Faz uma vaquinha!
-            </Button>
+            <Link href="/create">
+              <Image
+                src="https://scontent.fcpq17-1.fna.fbcdn.net/v/t39.30808-6/641646985_122111463681224584_1153405302911790187_n.jpg?stp=cp0_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=9X_Jk6A8Dw4Q7kNvwHrVrkF&_nc_oc=AdkltBDaRiPUOatFfhH_NcMJQype5yRd73kUm6INl6YL2WujpWG3RjHYTT3DUOhe9ObpDjwI-k4DDaenYDmChznz&_nc_zt=23&_nc_ht=scontent.fcpq17-1.fna&_nc_gid=tVTQD1h1ap5oSo8bVpzSCQ&oh=00_AfvCawtYP-GlZb6gR-0f68hB8Hnm6xTbDEBi6z2zcZq53g&oe=69A6E152"
+                alt="Faz uma vaquinha!"
+                width={154}
+                height={42}
+              />
+            </Link>
         </div>
       </div>
     </header>
