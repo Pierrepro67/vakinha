@@ -7,17 +7,19 @@ const VakinhaLogo = () => (
     <svg
         width="32"
         height="32"
-        viewBox="0 0 48 48"
+        viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="text-primary"
     >
-        <path d="M42 4H6C4.89543 4 4 4.89543 4 6V34C4 35.1046 4.89543 36 6 36H14V44L24.6667 36H42C43.1046 36 44 35.1046 44 34V6C44 4.89543 43.1046 4 42 4Z" fill="currentColor"/>
-        <line x1="24" y1="16" x2="16" y2="26" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
-        <line x1="24" y1="16" x2="32" y2="26" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
-        <circle cx="24" cy="16" r="4" fill="white" />
-        <circle cx="16" cy="26" r="4" fill="white" />
-        <circle cx="32" cy="26" r="4" fill="white" />
+        <circle cx="16" cy="16" r="16" fill="currentColor" />
+        <path
+            d="M9 16L14 21L23 12"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
     </svg>
 )
 
