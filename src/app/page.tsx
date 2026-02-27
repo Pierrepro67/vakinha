@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import { campaignData } from '@/lib/data';
+import { campaignData, updatesData, supportersData } from '@/lib/data';
 import Header from '@/components/Header';
 import { Card } from '@/components/ui/card';
 import { FundraisingCard } from '@/components/campaign/FundraisingCard';
 import { Heart } from 'lucide-react';
+import { CampaignTabs } from '@/components/campaign/CampaignTabs';
 
 export default function Home() {
   return (
@@ -37,12 +38,7 @@ export default function Home() {
                 <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
                   {campaignData.title}
                 </h1>
-                <p className="text-muted-foreground font-medium">
-                  ID: {campaignData.id}
-                </p>
-                <p className="text-base leading-relaxed text-foreground/80">
-                  {campaignData.description}
-                </p>
+                <CampaignTabs campaign={campaignData} updates={updatesData} supporters={supportersData} />
               </div>
             </div>
 
