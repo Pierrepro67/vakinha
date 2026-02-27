@@ -34,7 +34,14 @@ export const campaignData = {
   }
 };
 
-export const updatesData: Update[] = [];
+export const updatesData: Update[] = [
+    {
+        title: 'Troca na meta da Vaquinha',
+        authorInitials: 'NF',
+        time: 'há aproximadamente 3 horas',
+        content: 'De R$ 1.000.000,00 para R$ 1.500.000,00',
+    }
+];
 
 export const supportersData: Supporter[] = [];
 
@@ -56,7 +63,9 @@ export type Supporter = {
     time: string;
 };
 export type Update = {
-    date: string;
+    title: string;
+    authorInitials: string;
+    time: string;
     content: string;
 };
 export type FaqItem = {

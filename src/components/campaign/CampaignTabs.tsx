@@ -97,16 +97,26 @@ export function CampaignTabs({
       </TabsContent>
       <TabsContent value="updates">
         <Card>
-          <CardContent className="p-6 space-y-6">
+          <CardContent className="p-0">
             {updates.length > 0 ? (
-              updates.map((update, index) => (
-                <div key={index} className="flex flex-col gap-1">
-                  <p className="font-semibold text-sm">{update.date}</p>
-                  <p className="text-muted-foreground">{update.content}</p>
-                </div>
-              ))
+              <div>
+                {updates.map((update, index) => (
+                  <div key={index} className="p-6 border-b last:border-b-0">
+                    <div className="flex items-center gap-3">
+                      <Avatar>
+                        <AvatarFallback>{update.authorInitials}</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="font-semibold">{update.title}</p>
+                        <p className="text-sm text-muted-foreground">{update.time}</p>
+                      </div>
+                    </div>
+                    <p className="text-foreground mt-4">{update.content}</p>
+                  </div>
+                ))}
+              </div>
             ) : (
-              <p className="text-muted-foreground text-center">Nenhuma atualização ainda.</p>
+              <p className="p-6 text-muted-foreground text-center">Nenhuma atualização ainda.</p>
             )}
           </CardContent>
         </Card>
