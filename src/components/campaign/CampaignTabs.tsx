@@ -21,9 +21,13 @@ function formatCurrency(value: number) {
 export function CampaignTabs({
   campaign,
   updates,
+  activeTab,
+  onTabChange,
 }: {
   campaign: Pick<Campaign, 'description'>;
   updates: Update[];
+  activeTab: string;
+  onTabChange: (tab: string) => void;
 }) {
   const { toast } = useToast();
 
@@ -37,7 +41,7 @@ export function CampaignTabs({
   };
 
   return (
-    <Tabs defaultValue="about" className="w-full">
+    <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
       <TabsList className="flex flex-wrap -mb-px bg-transparent p-0">
         <TabsTrigger
           value="about"

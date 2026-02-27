@@ -1,8 +1,22 @@
+'use client';
+
+import { useState } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart } from 'lucide-react';
+import { CreditCard, Heart } from 'lucide-react';
 import type { Campaign } from '@/lib/data';
 import { Progress } from '@/components/ui/progress';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 function formatCurrency(value: number) {
   return new Intl.NumberFormat('pt-BR', {
@@ -11,7 +25,23 @@ function formatCurrency(value: number) {
   }).format(value);
 }
 
+const donationOptions = [10, 25, 50, 100];
+
 export function FundraisingCard({ campaign }: { campaign: Campaign }) {
+  const [selectedAmount, setSelectedAmount] = useState<number>(25);
+  const [customAmount, setCustomAmount] = useState('');
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleDonation = () => {
+    const amount = selectedAmount === -1 ? parseFloat(customAmount) : selectedAmount;
+    if (amount && amount > 0) {
+      console.log(`Doando ${formatCurrency(amount)}`);
+      // Here would be the logic to process the donation
+      setIsDialogOpen(false); // Close dialog on donation
+    }
+  }
+
+  const finalAmount = selectedAmount === -1 ? customAmount : selectedAmount?.toString();
 
   return (
     <Card className="sticky top-24 shadow-lg">
@@ -38,9 +68,65 @@ export function FundraisingCard({ campaign }: { campaign: Campaign }) {
             </div>
         </div>
         
-        <Button size="lg" className="w-full font-bold text-lg h-14">
-          Quero Ajudar
-        </Button>
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogTrigger asChild>
+                <Button size="lg" className="w-full font-bold text-lg h-14">
+                  Quero Ajudar
+                </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                    <DialogTitle>Faça sua doação</DialogTitle>
+                    <DialogDescription>
+                        Selecione um valor ou digite uma quantia personalizada. Sua ajuda faz a diferença!
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                    <div className="grid grid-cols-2 gap-4">
+                        {donationOptions.map((amount) => (
+                            <Button
+                                key={amount}
+                                variant={selectedAmount === amount ? 'default' : 'outline'}
+                                onClick={() => {
+                                    setSelectedAmount(amount);
+                                    setCustomAmount('');
+                                }}
+                            >
+                                {formatCurrency(amount)}
+                            </Button>
+                        ))}
+                    </div>
+                    <div>
+                        <Label htmlFor="custom-amount" className="sr-only">
+                            Outro valor
+                        </Label>
+                         <Input
+                            id="custom-amount"
+                            type="number"
+                            placeholder="Outro valor (R$)"
+                            value={customAmount}
+                            onChange={(e) => {
+                                setCustomAmount(e.target.value);
+                                setSelectedAmount(-1);
+                            }}
+                            onFocus={() => setSelectedAmount(-1)}
+                        />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button 
+                        type="submit" 
+                        onClick={handleDonation} 
+                        className="w-full" 
+                        disabled={!(finalAmount && parseFloat(finalAmount) > 0)}
+                    >
+                        <CreditCard className="mr-2 h-4 w-4" />
+                        Doar {finalAmount && parseFloat(finalAmount) > 0 ? formatCurrency(parseFloat(finalAmount)) : ''}
+                    </Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+
         <Button variant="outline" size="lg" className="w-full font-semibold h-12">
           Compartilhar
         </Button>

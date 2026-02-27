@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { campaignData, updatesData } from '@/lib/data';
 import Header from '@/components/Header';
@@ -5,8 +7,11 @@ import { Card } from '@/components/ui/card';
 import { FundraisingCard } from '@/components/campaign/FundraisingCard';
 import { CampaignTabs } from '@/components/campaign/CampaignTabs';
 import { CampaignInfo } from '@/components/campaign/CampaignInfo';
+import { useState } from 'react';
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState('about');
+
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
@@ -31,8 +36,13 @@ export default function Home() {
               </Card>
 
               <div className="space-y-4">
-                <CampaignInfo campaign={campaignData} />
-                <CampaignTabs campaign={campaignData} updates={updatesData} />
+                <CampaignInfo campaign={campaignData} setActiveTab={setActiveTab} />
+                <CampaignTabs 
+                  campaign={campaignData} 
+                  updates={updatesData} 
+                  activeTab={activeTab} 
+                  onTabChange={setActiveTab} 
+                />
               </div>
             </div>
 

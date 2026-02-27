@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { Campaign } from '@/lib/data';
 
 const GreenBadge = () => (
@@ -23,7 +22,13 @@ const RedBadge = () => (
 );
 
 
-export function CampaignInfo({ campaign }: { campaign: Pick<Campaign, 'category' | 'title' | 'id' | 'summary'> }) {
+export function CampaignInfo({ 
+    campaign,
+    setActiveTab 
+}: { 
+    campaign: Pick<Campaign, 'category' | 'title' | 'id' | 'summary'>,
+    setActiveTab: (tab: string) => void
+}) {
   return (
     <div className="space-y-4">
         <p className="text-sm font-semibold text-muted-foreground tracking-wider">{campaign.category}</p>
@@ -33,9 +38,9 @@ export function CampaignInfo({ campaign }: { campaign: Pick<Campaign, 'category'
         <p className="text-lg text-muted-foreground">ID: {campaign.id}</p>
         <p className="text-muted-foreground">
             {campaign.summary}{' '}
-            <Link href="#" className="font-semibold text-primary hover:underline">
+            <button onClick={() => setActiveTab('about')} className="font-semibold text-primary hover:underline bg-transparent border-none p-0 cursor-pointer">
                 ver tudo
-            </Link>
+            </button>
         </p>
         <div className="flex items-center gap-4 rounded-lg bg-card p-3 my-4 border">
             <div className="flex items-center gap-2">
@@ -43,9 +48,9 @@ export function CampaignInfo({ campaign }: { campaign: Pick<Campaign, 'category'
                 <OrangeBadge />
                 <RedBadge />
             </div>
-            <Link href="#" className="font-semibold text-sm text-primary hover:underline">
+            <button onClick={() => setActiveTab('badges')} className="font-semibold text-sm text-primary hover:underline bg-transparent border-none p-0 cursor-pointer">
                 Ver selos
-            </Link>
+            </button>
         </div>
     </div>
   );
