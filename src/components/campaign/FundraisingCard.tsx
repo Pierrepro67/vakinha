@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Heart, ShieldCheck } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import type { Campaign } from '@/lib/data';
 import { Progress } from '@/components/ui/progress';
 
@@ -45,23 +44,6 @@ export function FundraisingCard({ campaign }: { campaign: Campaign }) {
         <Button variant="outline" size="lg" className="w-full font-semibold h-12">
           Compartilhar
         </Button>
-
-        <div className="flex items-center justify-center gap-2 text-xs text-primary font-medium">
-            <ShieldCheck className="h-4 w-4"/>
-            <span>DOAÇÃO PROTEGIDA</span>
-        </div>
-        
-        <div className="border-t pt-4 mt-2">
-            <div className="flex items-center gap-3">
-                <Avatar className="h-12 w-12 bg-muted">
-                    <AvatarFallback className="text-lg bg-orange-200 text-orange-600 font-bold">{campaign.organizer.avatar}</AvatarFallback>
-                </Avatar>
-                <div>
-                    <p className="font-semibold">{campaign.organizer.name}</p>
-                    <p className="text-sm text-muted-foreground">Ativo(a) desde {campaign.organizer.activeSince}</p>
-                </div>
-            </div>
-        </div>
       </CardContent>
     </Card>
   );

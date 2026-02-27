@@ -11,10 +11,10 @@ export default function Home() {
       <Header />
       <main className="flex-1 py-8">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12 mb-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
             
             {/* Left Column */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 space-y-8">
               <Card className="overflow-hidden shadow-md rounded-lg relative">
                 <div className="relative aspect-[16/10]">
                   <Image
@@ -31,16 +31,7 @@ export default function Home() {
                     <Heart className="h-6 w-6 text-foreground" />
                 </button>
               </Card>
-            </div>
 
-            {/* Right Column */}
-            <div className="lg:col-span-1">
-              <FundraisingCard campaign={campaignData} />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
-            <div className="lg:col-span-2">
               <div className="space-y-4">
                 <p className="text-sm font-semibold text-muted-foreground tracking-wider">{campaignData.category}</p>
                 <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -53,6 +44,11 @@ export default function Home() {
                   {campaignData.description}
                 </p>
               </div>
+            </div>
+
+            {/* Right Column */}
+            <div className="lg:col-span-1">
+              <FundraisingCard campaign={campaignData} />
             </div>
           </div>
         </div>
