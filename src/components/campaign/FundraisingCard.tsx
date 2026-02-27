@@ -1,8 +1,7 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { Heart } from 'lucide-react';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Heart, ShieldCheck } from 'lucide-react';
 import type { Campaign } from '@/lib/data';
 
 function formatCurrency(value: number) {
@@ -13,41 +12,54 @@ function formatCurrency(value: number) {
 }
 
 export function FundraisingCard({ campaign }: { campaign: Campaign }) {
-  const progress = (campaign.raised / campaign.goal) * 100;
 
   return (
-    <Card className="sticky top-24 shadow-lg border-2 border-primary/10">
-      <CardHeader>
-        <div className="flex justify-between items-baseline">
-          <span className="text-sm text-muted-foreground">Arrecadado</span>
-          <span className="text-sm font-bold text-primary">{Math.round(progress)}%</span>
-        </div>
-        <Progress value={progress} className="w-full h-2 my-1" />
-        <p className="text-3xl font-bold text-primary">{formatCurrency(campaign.raised)}</p>
+    <Card className="sticky top-24 shadow-lg">
+      <CardHeader className="pb-4">
+        <span className="text-sm text-muted-foreground">Arrecadado</span>
+        <p className="text-4xl font-bold text-primary">{formatCurrency(campaign.raised)}</p>
         <p className="text-sm text-muted-foreground">
-          Meta de {formatCurrency(campaign.goal)}
+          de {formatCurrency(campaign.goal)}
         </p>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
-        <div className="flex justify-around items-center text-center p-2 bg-secondary rounded-md">
-          <div>
-            <p className="font-bold text-xl">{campaign.supportersCount}</p>
-            <p className="text-sm text-muted-foreground">Apoiadores</p>
-          </div>
-          <Separator orientation="vertical" className="h-10" />
-           <div>
-            <p className="font-bold text-xl">{campaign.daysLeft}</p>
-            <p className="text-sm text-muted-foreground">Dias restantes</p>
-          </div>
+        <div className="bg-secondary p-4 rounded-lg text-secondary-foreground">
+            <div className="flex justify-between items-center text-sm mb-2">
+                <div className="flex items-center gap-2">
+                    <span>Corações Recebidos</span>
+                    <Heart className="h-4 w-4 text-primary" fill="currentColor" />
+                </div>
+                <span className="font-bold">{campaign.heartsReceived.toLocaleString('pt-BR')}</span>
+            </div>
+            <div className="flex justify-between items-center text-sm">
+                <span>Apoiadores</span>
+                <span className="font-bold">{campaign.supportersCount.toLocaleString('pt-BR')}</span>
+            </div>
         </div>
         
-        <Button size="lg" className="w-full font-bold text-lg py-7 transition-transform hover:scale-105">
+        <Button size="lg" className="w-full font-bold text-lg h-14">
           Quero Ajudar
         </Button>
-        <Button variant="outline" size="lg" className="w-full gap-2 font-semibold">
-          <Heart className="text-destructive fill-current h-5 w-5" />
-          Apoiar com <span className="font-bold">R$25</span>
+        <Button variant="outline" size="lg" className="w-full font-semibold h-12">
+          Compartilhar
         </Button>
+
+        <div className="flex items-center justify-center gap-2 text-xs text-primary font-medium">
+            <ShieldCheck className="h-4 w-4"/>
+            <span>DOAÇÃO PROTEGIDA</span>
+        </div>
+        
+        <div className="border-t pt-4 mt-2">
+            <div className="flex items-center gap-3">
+                <Avatar className="h-12 w-12 bg-muted">
+                    <AvatarFallback className="text-lg bg-orange-200 text-orange-600 font-bold">{campaign.organizer.avatar}</AvatarFallback>
+                </Avatar>
+                <div>
+                    <p className="font-semibold">{campaign.organizer.name}</p>
+                    <p className="text-sm text-muted-foreground">Ativo(a) desde {campaign.organizer.activeSince}</p>
+                </div>
+            </div>
+        </div>
       </CardContent>
     </Card>
   );

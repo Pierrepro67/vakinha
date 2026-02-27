@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "campaign-main",
-      "description": "Main campaign image showing people helping each other.",
-      "imageUrl": "https://images.unsplash.com/photo-1763844669613-563f1ef49ac9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb21tdW5pdHklMjBoZWxwfGVufDB8fHx8MTc3MjE2MDQ4MHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "community help"
+      "description": "Aerial view of a mudslide disaster area.",
+      "imageUrl": "https://images.unsplash.com/photo-1620385154366-0a25b6895e84?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "disaster mudslide"
     },
     {
       "id": "related-campaign-1",
@@ -45,7 +45,7 @@
     {
       "id": "supporter-avatar-3",
       "description": "Avatar for a third supporter.",
-      "imageUrl": "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBmYWNlfGVufDB8fHx8MTc3MjE1Mjg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBmYWNlfGVufDB8fHx8fDE3NzIxNTI4NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person face"
     }
   ]

@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'FundAid Campaign Page',
-  description: 'Support important causes through FundAid.',
+  title: 'Vakinha',
+  description: 'Ajude a financiar campanhas de arrecadação de fundos.',
 };
 
 export default function RootLayout({
@@ -13,13 +13,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="pt-BR" className="h-full">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased h-full">
+      <body className="font-body antialiased h-full bg-background">
         {children}
         <Toaster />
       </body>

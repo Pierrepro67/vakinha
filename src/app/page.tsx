@@ -1,45 +1,22 @@
 import Image from 'next/image';
-import {
-  campaignData,
-  updatesData,
-  supportersData,
-  faqData,
-  relatedCampaignsData,
-} from '@/lib/data';
+import { campaignData } from '@/lib/data';
 import Header from '@/components/Header';
-import { Button } from '@/components/ui/button';
-import { Share2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { FundraisingCard } from '@/components/campaign/FundraisingCard';
-import { CampaignTabs } from '@/components/campaign/CampaignTabs';
-import { FaqSection } from '@/components/campaign/FaqSection';
-import { RelatedCampaigns } from '@/components/campaign/RelatedCampaigns';
+import { Heart } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background">
+    <div className="flex min-h-screen w-full flex-col">
       <Header />
-      <main className="flex-1">
-        <div className="container mx-auto max-w-7xl py-8 px-4">
+      <main className="flex-1 py-8">
+        <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
             
             {/* Left Column */}
             <div className="lg:col-span-2">
-              <div className="mb-4">
-                <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-                  {campaignData.title}
-                </h1>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <span>ID: {campaignData.id}</span>
-                  <Button variant="outline" size="sm" className="gap-2 rounded-full">
-                    <Share2 className="h-4 w-4" />
-                    Compartilhar
-                  </Button>
-                </div>
-              </div>
-
-              <Card className="overflow-hidden mb-8 shadow-md rounded-lg">
-                <div className="relative aspect-video">
+              <Card className="overflow-hidden mb-8 shadow-md rounded-lg relative">
+                <div className="relative aspect-[16/10]">
                   <Image
                     src={campaignData.mainImage.imageUrl}
                     alt={campaignData.mainImage.description}
@@ -50,13 +27,24 @@ export default function Home() {
                     sizes="(max-width: 1024px) 100vw, 67vw"
                   />
                 </div>
+                <button className="absolute top-4 right-4 bg-card/80 backdrop-blur-sm rounded-full p-2.5 hover:bg-card transition-colors">
+                    <Heart className="h-6 w-6 text-foreground" />
+                </button>
               </Card>
 
-              <CampaignTabs 
-                campaign={campaignData}
-                updates={updatesData}
-                supporters={supportersData}
-              />
+              <div className="space-y-4">
+                <p className="text-sm font-semibold text-muted-foreground tracking-wider">{campaignData.category}</p>
+                <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+                  {campaignData.title}
+                </h1>
+                <p className="text-muted-foreground font-medium">
+                  ID: {campaignData.id}
+                </p>
+                <p className="text-base leading-relaxed text-foreground/80">
+                  {campaignData.description}
+                </p>
+              </div>
+
             </div>
 
             {/* Right Column */}
@@ -64,9 +52,6 @@ export default function Home() {
               <FundraisingCard campaign={campaignData} />
             </div>
           </div>
-          
-          <FaqSection faqs={faqData} />
-          <RelatedCampaigns campaigns={relatedCampaignsData} />
         </div>
       </main>
     </div>
